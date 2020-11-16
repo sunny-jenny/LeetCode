@@ -2,7 +2,7 @@ package com.jenny;
 
 import java.util.List;
 
-import com.jenny.datastructure.Trie;
+import com.jenny.leetcode.fourteenthFifty.TopKFrequentWords;
 
 public class Main {
 
@@ -22,8 +22,14 @@ public class Main {
 //			e.printStackTrace();
 //		}
 		
-		Trie t = new Trie();
-		List<String> res = t.searchPrefix(new String[] {"Burger King", "Good burger", "Walburger", "sde burger wed", "Burr king"}, "bur");
+//		Trie t = new Trie();
+//		List<String> res = t.searchPrefix(new String[] {"Burger King", "Good burger", "Walburger", "sde burger wed", "Burr king"}, "bur");
+//		for(String r: res){
+//			System.out.println(r);
+//		}
+		
+		TopKFrequentWords tk = new TopKFrequentWords();
+		List<String> res = tk.topKFrequent(new String[] {"the", "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is"}, 4);
 		for(String r: res){
 			System.out.println(r);
 		}
