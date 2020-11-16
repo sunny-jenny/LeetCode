@@ -1,4 +1,4 @@
-package com.jenny.leetcode.fourteenthFifty;
+package com.jenny.leetcode.fourteenthfifty;
 
 import java.util.ArrayList;
 import java.util.HashMap;
