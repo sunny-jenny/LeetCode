@@ -2,7 +2,7 @@ package com.jenny;
 
 import java.util.List;
 
-import com.jenny.leetcode.fourteenthFifty.TopKFrequentWords;
+import com.jenny.leetcode.fifthfifty.WordSearchII;
 
 public class Main {
 
@@ -28,12 +28,18 @@ public class Main {
 //			System.out.println(r);
 //		}
 		
-		TopKFrequentWords tk = new TopKFrequentWords();
-		List<String> res = tk.topKFrequent(new String[] {"the", "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is"}, 4);
+//		TopKFrequentWords tk = new TopKFrequentWords();
+//		List<String> res = tk.topKFrequent(new String[] {"the", "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is"}, 4);
+//		for(String r: res){
+//			System.out.println(r);
+//		}
+		
+		WordSearchII ws = new WordSearchII();
+		char[][] board = {{'o','a','a','n'},{'e','t','a','e'},{'i','h','k','r'},{'i','f','l','v'}};
+		List<String> res = ws.findWords(board, new String[] {"oath","pea","eat","rain"});
 		for(String r: res){
 			System.out.println(r);
 		}
-		
 	}
 
 }
