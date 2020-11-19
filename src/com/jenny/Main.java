@@ -1,10 +1,8 @@
 package com.jenny;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-import com.jenny.leetcode.twentysixthfifty.SynonymSentences;
+import com.jenny.leetcode.seventhfifty.NumberOfIslandsII;
 
 public class Main {
 
@@ -26,36 +24,30 @@ public class Main {
 		
 //		Trie t = new Trie();
 //		List<String> res = t.searchPrefix(new String[] {"Burger King", "Good burger", "Walburger", "sde burger wed", "Burr king"}, "bur");
-//		for(String r: res){
-//			System.out.println(r);
-//		}
 		
 //		TopKFrequentWords tk = new TopKFrequentWords();
 //		List<String> res = tk.topKFrequent(new String[] {"the", "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is"}, 4);
-//		for(String r: res){
-//			System.out.println(r);
-//		}
 		
 //		WordSearchII ws = new WordSearchII();
 //		char[][] board = {{'o','a','a','n'},{'e','t','a','e'},{'i','h','k','r'},{'i','f','l','v'}};
 //		List<String> res = ws.findWords(board, new String[] {"oath","pea","eat","rain"});
-//		for(String r: res){
-//			System.out.println(r);
-//		}
 		
 //		GraphValidTree gvt = new GraphValidTree();
 //		System.out.println(gvt.validTree(5, new int[][] {{0, 1}, {1, 2}, {2, 3}, {1, 3}, {1, 4}}));
 		
-		SynonymSentences ss = new SynonymSentences();
-		List<List<String>> synonyms = new ArrayList<>();
-		List<String> list = new ArrayList<>(Arrays.asList("happy","joy"));
-		synonyms.add(list);
-		list = new ArrayList<>(Arrays.asList("sad","sorrow"));
-		synonyms.add(list);
-		list = new ArrayList<>(Arrays.asList("joy","cheerful"));
-		synonyms.add(list);
-		List<String> res = ss.generateSentences(synonyms, "I am happy today but was sad yesterday");
-		for(String r: res){
+//		SynonymSentences ss = new SynonymSentences();
+//		List<List<String>> synonyms = new ArrayList<>();
+//		List<String> list = new ArrayList<>(Arrays.asList("happy","joy"));
+//		synonyms.add(list);
+//		list = new ArrayList<>(Arrays.asList("sad","sorrow"));
+//		synonyms.add(list);
+//		list = new ArrayList<>(Arrays.asList("joy","cheerful"));
+//		synonyms.add(list);
+//		List<String> res = ss.generateSentences(synonyms, "I am happy today but was sad yesterday");
+
+		NumberOfIslandsII noi = new NumberOfIslandsII();
+		List<Integer> res = noi.numIslands2(3, 3, new int[][] {{0, 0}, {0, 1}, {1, 2}, {2, 1}});
+		for(int r: res){
 			System.out.println(r);
 		}
 	}
