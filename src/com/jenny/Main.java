@@ -1,8 +1,6 @@
 package com.jenny;
 
-import java.util.List;
-
-import com.jenny.leetcode.fifthfifty.WordSearchII;
+import com.jenny.leetcode.sixthfifty.GraphValidTree;
 
 public class Main {
 
@@ -34,12 +32,15 @@ public class Main {
 //			System.out.println(r);
 //		}
 		
-		WordSearchII ws = new WordSearchII();
-		char[][] board = {{'o','a','a','n'},{'e','t','a','e'},{'i','h','k','r'},{'i','f','l','v'}};
-		List<String> res = ws.findWords(board, new String[] {"oath","pea","eat","rain"});
-		for(String r: res){
-			System.out.println(r);
-		}
+//		WordSearchII ws = new WordSearchII();
+//		char[][] board = {{'o','a','a','n'},{'e','t','a','e'},{'i','h','k','r'},{'i','f','l','v'}};
+//		List<String> res = ws.findWords(board, new String[] {"oath","pea","eat","rain"});
+//		for(String r: res){
+//			System.out.println(r);
+//		}
+		
+		GraphValidTree gvt = new GraphValidTree();
+		System.out.println(gvt.validTree(5, new int[][] {{0, 1}, {1, 2}, {2, 3}, {1, 3}, {1, 4}}));
 	}
 
 }
