@@ -1,6 +1,10 @@
 package com.jenny;
 
-import com.jenny.leetcode.sixthfifty.GraphValidTree;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import com.jenny.leetcode.twentysixthfifty.SynonymSentences;
 
 public class Main {
 
@@ -39,8 +43,21 @@ public class Main {
 //			System.out.println(r);
 //		}
 		
-		GraphValidTree gvt = new GraphValidTree();
-		System.out.println(gvt.validTree(5, new int[][] {{0, 1}, {1, 2}, {2, 3}, {1, 3}, {1, 4}}));
+//		GraphValidTree gvt = new GraphValidTree();
+//		System.out.println(gvt.validTree(5, new int[][] {{0, 1}, {1, 2}, {2, 3}, {1, 3}, {1, 4}}));
+		
+		SynonymSentences ss = new SynonymSentences();
+		List<List<String>> synonyms = new ArrayList<>();
+		List<String> list = new ArrayList<>(Arrays.asList("happy","joy"));
+		synonyms.add(list);
+		list = new ArrayList<>(Arrays.asList("sad","sorrow"));
+		synonyms.add(list);
+		list = new ArrayList<>(Arrays.asList("joy","cheerful"));
+		synonyms.add(list);
+		List<String> res = ss.generateSentences(synonyms, "I am happy today but was sad yesterday");
+		for(String r: res){
+			System.out.println(r);
+		}
 	}
 
 }
