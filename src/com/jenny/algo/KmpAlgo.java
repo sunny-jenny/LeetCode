@@ -17,7 +17,7 @@ public class KmpAlgo {
 			} else {
 				j = next[j];
 			}
-		}		
+		}
 		
 		// search matched string:
 		i = 0;
