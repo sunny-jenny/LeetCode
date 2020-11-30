@@ -4,18 +4,30 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.PriorityQueue;
 
 public class WaitList {
 	
 	// return the party whose size <= freeTableSize but with longest waiting time
 	public Party getTableForFirstAvailableParty(List<Party> waitingList, int freeTableSize) {
-		Party result = null;
+		// one time solution
+//		Party result = null;
+//		for (Party p: waitingList) {
+//			if (result == null || (p.size <= freeTableSize && p.waitTime > result.waitTime)) {
+//				result = p;
+//			}
+//		}
+//		return result;
+		
+		PriorityQueue<Party> pq = new PriorityQueue<>((a, b) -> a.size != b.size ? a.size - b.size : Long.compare(b.waitTime, a.waitTime));
 		for (Party p: waitingList) {
-			if (result == null || (p.size <= freeTableSize && p.waitTime > result.waitTime)) {
-				result = p;
-			}
+			pq.offer(p);
 		}
-		return result;
+		
+		while (!pq.isEmpty()) {
+			if (pq.peek().size <= freeTableSize) return pq.poll(); // each time is log(n), n is the size of pq
+		}
+		return null;
 		
 //		waitingList.sort((a, b) -> Long.compare(b.waitTime, a.waitTime)); // O(N) = nlogn
 //		for (Party p: waitingList) {
@@ -26,14 +38,26 @@ public class WaitList {
 	
 	// return the party whose size = freeTableSize but with longest waiting time
 	public Party getTableForExactSizeParty(List<Party> waitingList, int freeTableSize) {
+		// one time solution
+//		Party result = null;
+//		for (Party p: waitingList) {
+//			if (result == null || (p.size == freeTableSize && p.waitTime > result.waitTime)) {
+//				result = p;
+//			}
+//		}
+//		return result;
 		
-		Party result = null;
+		Map<Integer, PriorityQueue<Party>> map = new HashMap<>();
 		for (Party p: waitingList) {
-			if (result == null || (p.size == freeTableSize && p.waitTime > result.waitTime)) {
-				result = p;
-			}
+			map.putIfAbsent(p.size, new PriorityQueue<>((a, b) -> Long.compare(b.waitTime, a.waitTime)));
+			map.get(p.size).offer(p);			
 		}
-		return result;
+		
+		if (map.containsKey(freeTableSize)) {
+			map.get(freeTableSize);
+			return map.get(freeTableSize).poll(); // each time is log(n), n is the size of pq
+		}
+		return null;
 		
 //		Map<Integer, List<Party>> map = new HashMap<>();
 //		for (Party p: waitingList) {

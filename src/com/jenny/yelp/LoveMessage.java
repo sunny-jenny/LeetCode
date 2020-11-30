@@ -18,7 +18,7 @@ public class LoveMessage {
 			populateMap(receiverMap, m, m.receiver, uniqueSet);
 		}
 		
-		String[] result = getPersonWithMostOrLestLoves(receiverMap);
+		String[] result = getPersonWithMostOrLeastLoves(receiverMap);
 		return result[0];
 	}
 	
@@ -52,7 +52,7 @@ public class LoveMessage {
 		uniqueSet.add(message.sender + "#" + message.receiver + "#" + message.content);
 	}
 	
-	private String[] getPersonWithMostOrLestLoves(Map<String, List<Message>> map) {
+	private String[] getPersonWithMostOrLeastLoves(Map<String, List<Message>> map) {
 		String[] result = new String[2]; // String[0] is for most loves, String[1] is for least loves
 		int countMost = 0;
 		int countLeast = Integer.MAX_VALUE;

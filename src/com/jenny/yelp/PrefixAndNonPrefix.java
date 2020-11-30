@@ -46,7 +46,7 @@ public class PrefixAndNonPrefix {
 		
 		// add non prefix strings(KMP):
 		result.clear();
-		searchMatchedString(inputStrings, prefix, result); // O(N)=N^2
+		searchMatchedString(inputStrings, prefix, result); // O(N)=M*N, M is the number of inputStrings, N is the average length of each inputString
 		
 		return result;
 	}
